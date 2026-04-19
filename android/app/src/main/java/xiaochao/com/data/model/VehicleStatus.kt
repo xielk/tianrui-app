@@ -1,0 +1,28 @@
+package xiaochao.com.data.model
+
+data class VehicleStatus(
+    val frameNumber: String,
+    val controlModel: String,
+    val historyMileKm: Int,
+    val sosPhoneMasked: String,
+    val batteryPercent: Int,
+    val showLightning: Boolean,
+    val voltageText: String,
+    val signalStrengthLevel: Int,
+    val onlineStatus: Int,
+    val isOwner: Boolean,
+    val bluetoothMacAddress: String,
+    val latitude: Double,
+    val longitude: Double,
+    val bleConnected: Boolean,
+    val bleSystemConnected: Boolean,
+    val isLocked: Boolean,
+    val isMuteEnabled: Boolean,
+    val isAutoSenseEnabled: Boolean,
+    val gpsLocked: Boolean,
+    val timeText: String,
+    val mileageKm: String,
+    val durationMin: Int,
+    val topSpeedKmh: Int,
+    val avgSpeedKmh: Int,
+)

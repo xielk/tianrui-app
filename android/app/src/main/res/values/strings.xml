@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">宗申智行</string>
+    <string name="f2_title">F2 Control</string>
+    <string name="f2_current_location">当前位置</string>
+    <string name="f2_history_track">历史轨迹</string>
+    <string name="f2_find_bike">寻车</string>
+    <string name="f2_settings">设置</string>
+    <string name="f2_share_user">用车人</string>
+</resources>
