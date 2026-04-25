@@ -137,6 +137,7 @@ private class FakeApiRepository : ApiRepository {
     override suspend fun removeSharedUser(deviceKey: String, memberId: String): AppResult<Unit> = unsupported()
     override suspend fun changeOwner(deviceKey: String, newOwnerPhone: String): AppResult<Unit> = unsupported()
     override suspend fun upsertCid(cid: String): AppResult<Unit> = unsupported()
+    override suspend fun upsertPushDevice(token: String): AppResult<Unit> = unsupported()
     override suspend fun createBleLog(deviceKey: String, content: String): AppResult<Unit> = unsupported()
 
     private fun <T> unsupported(): AppResult<T> {

@@ -1,0 +1,6 @@
+framework module Pods_TianruiappTests {
+  umbrella header "Pods-TianruiappTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

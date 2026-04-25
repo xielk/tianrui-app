@@ -1,0 +1,700 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		039F4711DECCD645CCBDB3CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB371D5F5AE07F0958C7E1B1 /* Assets.xcassets */; };
+		1B60B55AC21DEA8F15EA291F /* F1Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE6A62C69043EAED3AAA6BC /* F1Components.swift */; };
+		20F09FEBF69B1E2167291531 /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B526A78FEA3F16AA1B168 /* RootScreen.swift */; };
+		26AFF763C70A33AD9D851CEE /* OtaFlowAlignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2609E94D57E7F432297AB320 /* OtaFlowAlignmentTests.swift */; };
+		2B0F5B6294D822D94A91C8A6 /* BlePacketCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387EBECD5EBDEE3AC503DB25 /* BlePacketCodec.swift */; };
+		3137B5DB0F0CBC261B71E868 /* LoginLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E0657D3F443154842B449 /* LoginLayoutTests.swift */; };
+		3F9A660D4AD13D199087D933 /* AppTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A96B65A0C27A9230B673A7 /* AppTypography.swift */; };
+		507AEF680673DD3DB36FF16E /* BleRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FD2AB2BD054BA1E2FBA4FA /* BleRepositoryTests.swift */; };
+		5547E47B06CA235182C70577 /* IOSBleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5EA8DBEE047C68F3C1ABF /* IOSBleManager.swift */; };
+		5CBB8432566387A6DCAC276F /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF5E4DF6BAAD70FEF699334 /* AppColor.swift */; };
+		708F3BBE5C6BE1E6127FE62C /* Pods_TianruiappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D399D161129975E6A347D632 /* Pods_TianruiappTests.framework */; };
+		7CF11914B7991DE2C2377009 /* BlePacketCodecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C513A3E9DB060EAF323E4F4D /* BlePacketCodecTests.swift */; };
+		800F33F52E025825E44E3E75 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63783E89354C9160BDA29 /* LoginScreen.swift */; };
+		83FE8182AB474907E89FCCAC /* AppBootstrapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABDF509320A1C642AA68DC6 /* AppBootstrapTests.swift */; };
+		872905F4D6E3088FBFA28940 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D86B450FA7E69533F191EE2 /* LoginViewModel.swift */; };
+		8F2E7A9A1951523E42D890F7 /* F1ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F260AD2ADE97DC82D92640 /* F1ViewModel.swift */; };
+		961A30DC5C2CB2AE3597B334 /* TianruiappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E6321551E8920AE499A27F /* TianruiappApp.swift */; };
+		9DA2CF2719AA839A17E8C368 /* BleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB873D5847070BA33CD3FD3D /* BleRepository.swift */; };
+		B6ED3A42EF348B1C6842FC81 /* RequiredAssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245AD6476F745C17B16D0C1B /* RequiredAssetTests.swift */; };
+		BAE568C9D886D3F9BF8D62A1 /* F1HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB2B5B4FF505C165216166 /* F1HomeScreen.swift */; };
+		BE124B6039B27F3A11083241 /* F1LayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31525227FF6F8818A939D069 /* F1LayoutTests.swift */; };
+		CAC3E49F81ED2F39D38899D5 /* Pods_Tianruiapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A9D7282300AA45376D251C /* Pods_Tianruiapp.framework */; };
+		D333E4DB0C966AB7F2D8D8F8 /* BleRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B523B4D2030441504745FDF1 /* BleRepositoryImpl.swift */; };
+		D342738F173E80598DF096ED /* BleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6514B219E123C6B998FF2454 /* BleModels.swift */; };
+		D8307DDDEFA384FC29A6211E /* F1MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1205FB40016E9EBCBC7940EC /* F1MockData.swift */; };
+		DF7DAF49EC34EC030FF904BA /* AppShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481192AF8EE0D39052DF525 /* AppShadow.swift */; };
+		E14BAD3A9CA43165EEB24D48 /* AuthAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC82CBC8683908DD9F9986BC /* AuthAPIClient.swift */; };
+		E7B475E130E9EEFC894B8D9A /* RequiredAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250D622E57B4CDB4C923C4D5 /* RequiredAssets.swift */; };
+		E90C5EC42E3F1FF32ED07BB4 /* AppRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF42E896E8A4E4906A92DD0C /* AppRadius.swift */; };
+		F69B9F750E0345BD3BBB25DA /* LoginComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A943D105452A2098C296C091 /* LoginComponents.swift */; };
+		FEA236B1B5F39751BDF63C17 /* AppSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B78E62DDE2F0DE0BAE2076B /* AppSpacing.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D1D04E3099A5EC936C503D1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE0AD3A280411407A2FE8E27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D350DD90E3432E2274D4D445;
+			remoteInfo = Tianruiapp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		034E0657D3F443154842B449 /* LoginLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLayoutTests.swift; sourceTree = "<group>"; };
+		0683B765938050330E372CDC /* Pods-TianruiappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TianruiappTests.release.xcconfig"; path = "Target Support Files/Pods-TianruiappTests/Pods-TianruiappTests.release.xcconfig"; sourceTree = "<group>"; };
+		08C63783E89354C9160BDA29 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		1205FB40016E9EBCBC7940EC /* F1MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1MockData.swift; sourceTree = "<group>"; };
+		21FD2AB2BD054BA1E2FBA4FA /* BleRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleRepositoryTests.swift; sourceTree = "<group>"; };
+		245AD6476F745C17B16D0C1B /* RequiredAssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredAssetTests.swift; sourceTree = "<group>"; };
+		250D622E57B4CDB4C923C4D5 /* RequiredAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredAssets.swift; sourceTree = "<group>"; };
+		2609E94D57E7F432297AB320 /* OtaFlowAlignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtaFlowAlignmentTests.swift; sourceTree = "<group>"; };
+		29F260AD2ADE97DC82D92640 /* F1ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1ViewModel.swift; sourceTree = "<group>"; };
+		2AF5E4DF6BAAD70FEF699334 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		31525227FF6F8818A939D069 /* F1LayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1LayoutTests.swift; sourceTree = "<group>"; };
+		387EBECD5EBDEE3AC503DB25 /* BlePacketCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlePacketCodec.swift; sourceTree = "<group>"; };
+		4D86B450FA7E69533F191EE2 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		4F9E0333115C6BF189D7050D /* Pods-Tianruiapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tianruiapp.release.xcconfig"; path = "Target Support Files/Pods-Tianruiapp/Pods-Tianruiapp.release.xcconfig"; sourceTree = "<group>"; };
+		5B78E62DDE2F0DE0BAE2076B /* AppSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpacing.swift; sourceTree = "<group>"; };
+		6514B219E123C6B998FF2454 /* BleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleModels.swift; sourceTree = "<group>"; };
+		71A96B65A0C27A9230B673A7 /* AppTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTypography.swift; sourceTree = "<group>"; };
+		73ECC767EFCE1991A2BF3D1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		750DE27562F6634CE495BBD2 /* TianruiappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TianruiappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A9D7282300AA45376D251C /* Pods_Tianruiapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tianruiapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ADB2B5B4FF505C165216166 /* F1HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1HomeScreen.swift; sourceTree = "<group>"; };
+		8481192AF8EE0D39052DF525 /* AppShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppShadow.swift; sourceTree = "<group>"; };
+		A943D105452A2098C296C091 /* LoginComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginComponents.swift; sourceTree = "<group>"; };
+		AABDF509320A1C642AA68DC6 /* AppBootstrapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBootstrapTests.swift; sourceTree = "<group>"; };
+		AF42E896E8A4E4906A92DD0C /* AppRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRadius.swift; sourceTree = "<group>"; };
+		B523B4D2030441504745FDF1 /* BleRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleRepositoryImpl.swift; sourceTree = "<group>"; };
+		BB371D5F5AE07F0958C7E1B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB873D5847070BA33CD3FD3D /* BleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BleRepository.swift; sourceTree = "<group>"; };
+		C1D833315A2C253C1727F691 /* Pods-Tianruiapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tianruiapp.debug.xcconfig"; path = "Target Support Files/Pods-Tianruiapp/Pods-Tianruiapp.debug.xcconfig"; sourceTree = "<group>"; };
+		C513A3E9DB060EAF323E4F4D /* BlePacketCodecTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlePacketCodecTests.swift; sourceTree = "<group>"; };
+		CE6A73D89BF545BB76B7E774 /* Pods-TianruiappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TianruiappTests.debug.xcconfig"; path = "Target Support Files/Pods-TianruiappTests/Pods-TianruiappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D00B526A78FEA3F16AA1B168 /* RootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
+		D399D161129975E6A347D632 /* Pods_TianruiappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TianruiappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7E6321551E8920AE499A27F /* TianruiappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TianruiappApp.swift; sourceTree = "<group>"; };
+		DFE6A62C69043EAED3AAA6BC /* F1Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F1Components.swift; sourceTree = "<group>"; };
+		E7C5EA8DBEE047C68F3C1ABF /* IOSBleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSBleManager.swift; sourceTree = "<group>"; };
+		EC82CBC8683908DD9F9986BC /* AuthAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPIClient.swift; sourceTree = "<group>"; };
+		F08F906CE61C7430A1A939BC /* Tianruiapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tianruiapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F642EEF59C483C0050C58FBF /* Tianruiapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tianruiapp.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		86CD60790853F6BEA47E0477 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAC3E49F81ED2F39D38899D5 /* Pods_Tianruiapp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA7FE5CB8697FA4227D57B16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				708F3BBE5C6BE1E6127FE62C /* Pods_TianruiappTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D8E69D4491D1E2658592262 /* F1 */ = {
+			isa = PBXGroup;
+			children = (
+				DFE6A62C69043EAED3AAA6BC /* F1Components.swift */,
+				7ADB2B5B4FF505C165216166 /* F1HomeScreen.swift */,
+				1205FB40016E9EBCBC7940EC /* F1MockData.swift */,
+				29F260AD2ADE97DC82D92640 /* F1ViewModel.swift */,
+			);
+			path = F1;
+			sourceTree = "<group>";
+		};
+		39F6571631349338439A4844 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1D833315A2C253C1727F691 /* Pods-Tianruiapp.debug.xcconfig */,
+				4F9E0333115C6BF189D7050D /* Pods-Tianruiapp.release.xcconfig */,
+				CE6A73D89BF545BB76B7E774 /* Pods-TianruiappTests.debug.xcconfig */,
+				0683B765938050330E372CDC /* Pods-TianruiappTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		405DD600CD423B40055873C5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D00B526A78FEA3F16AA1B168 /* RootScreen.swift */,
+				D7E6321551E8920AE499A27F /* TianruiappApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4B6D910EB2A35CA4FBC5F9BE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EC82CBC8683908DD9F9986BC /* AuthAPIClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		64A622F192BB98B537D88D6D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				2D8E69D4491D1E2658592262 /* F1 */,
+				D858862F18CAC243E409A8E0 /* Login */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		95A7250CE7C551676CB63698 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77A9D7282300AA45376D251C /* Pods_Tianruiapp.framework */,
+				D399D161129975E6A347D632 /* Pods_TianruiappTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7FF1242CCE1CEE7FA59DA11 = {
+			isa = PBXGroup;
+			children = (
+				FAE3193929580E3D241D76F0 /* Tianruiapp */,
+				FF91AFC7F157FC350B539CF0 /* TianruiappTests */,
+				EECEAD386D5E65DE9C020CBF /* Products */,
+				39F6571631349338439A4844 /* Pods */,
+				95A7250CE7C551676CB63698 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B8CFBC5300BE741A190143DF /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				6514B219E123C6B998FF2454 /* BleModels.swift */,
+				387EBECD5EBDEE3AC503DB25 /* BlePacketCodec.swift */,
+				BB873D5847070BA33CD3FD3D /* BleRepository.swift */,
+				B523B4D2030441504745FDF1 /* BleRepositoryImpl.swift */,
+				E7C5EA8DBEE047C68F3C1ABF /* IOSBleManager.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		CD0ED7335AF95490FE5C5AB1 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				2AF5E4DF6BAAD70FEF699334 /* AppColor.swift */,
+				AF42E896E8A4E4906A92DD0C /* AppRadius.swift */,
+				8481192AF8EE0D39052DF525 /* AppShadow.swift */,
+				5B78E62DDE2F0DE0BAE2076B /* AppSpacing.swift */,
+				71A96B65A0C27A9230B673A7 /* AppTypography.swift */,
+				250D622E57B4CDB4C923C4D5 /* RequiredAssets.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		D858862F18CAC243E409A8E0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A943D105452A2098C296C091 /* LoginComponents.swift */,
+				08C63783E89354C9160BDA29 /* LoginScreen.swift */,
+				4D86B450FA7E69533F191EE2 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EECEAD386D5E65DE9C020CBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F08F906CE61C7430A1A939BC /* Tianruiapp.app */,
+				750DE27562F6634CE495BBD2 /* TianruiappTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F045EE42AB7748BD69F1F589 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB371D5F5AE07F0958C7E1B1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FAE3193929580E3D241D76F0 /* Tianruiapp */ = {
+			isa = PBXGroup;
+			children = (
+				73ECC767EFCE1991A2BF3D1E /* Info.plist */,
+				F642EEF59C483C0050C58FBF /* Tianruiapp.entitlements */,
+				405DD600CD423B40055873C5 /* App */,
+				B8CFBC5300BE741A190143DF /* Bluetooth */,
+				CD0ED7335AF95490FE5C5AB1 /* DesignSystem */,
+				64A622F192BB98B537D88D6D /* Features */,
+				4B6D910EB2A35CA4FBC5F9BE /* Networking */,
+				F045EE42AB7748BD69F1F589 /* Resources */,
+			);
+			path = Tianruiapp;
+			sourceTree = "<group>";
+		};
+		FF91AFC7F157FC350B539CF0 /* TianruiappTests */ = {
+			isa = PBXGroup;
+			children = (
+				AABDF509320A1C642AA68DC6 /* AppBootstrapTests.swift */,
+				C513A3E9DB060EAF323E4F4D /* BlePacketCodecTests.swift */,
+				21FD2AB2BD054BA1E2FBA4FA /* BleRepositoryTests.swift */,
+				31525227FF6F8818A939D069 /* F1LayoutTests.swift */,
+				034E0657D3F443154842B449 /* LoginLayoutTests.swift */,
+				2609E94D57E7F432297AB320 /* OtaFlowAlignmentTests.swift */,
+				245AD6476F745C17B16D0C1B /* RequiredAssetTests.swift */,
+			);
+			path = TianruiappTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A14200FF31A9BCABB3C5AB2B /* TianruiappTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 833CD3553B69E9F37AF43659 /* Build configuration list for PBXNativeTarget "TianruiappTests" */;
+			buildPhases = (
+				BA2D754C37D3A0A7B6E7D927 /* [CP] Check Pods Manifest.lock */,
+				905B3C6DE1F43CBBFC7F0951 /* Sources */,
+				BA7FE5CB8697FA4227D57B16 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71442BD26FF780351104372C /* PBXTargetDependency */,
+			);
+			name = TianruiappTests;
+			productName = TianruiappTests;
+			productReference = 750DE27562F6634CE495BBD2 /* TianruiappTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D350DD90E3432E2274D4D445 /* Tianruiapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9079CD19CC947660116B733 /* Build configuration list for PBXNativeTarget "Tianruiapp" */;
+			buildPhases = (
+				EC1D81440959E6F9BDB6D5C3 /* [CP] Check Pods Manifest.lock */,
+				2F17C8D24D0F36E17E880875 /* Sources */,
+				0D0CDC8F15AD9B216F8E64F6 /* Resources */,
+				86CD60790853F6BEA47E0477 /* Frameworks */,
+				4A136F24BA18C911C2E62546 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tianruiapp;
+			productName = Tianruiapp;
+			productReference = F08F906CE61C7430A1A939BC /* Tianruiapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE0AD3A280411407A2FE8E27 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A14200FF31A9BCABB3C5AB2B = {
+						DevelopmentTeam = 8Q92DEV7VD;
+					};
+					D350DD90E3432E2274D4D445 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C96CE99D9638BD87D62BBC23 /* Build configuration list for PBXProject "Tianruiapp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B7FF1242CCE1CEE7FA59DA11;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EECEAD386D5E65DE9C020CBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D350DD90E3432E2274D4D445 /* Tianruiapp */,
+				A14200FF31A9BCABB3C5AB2B /* TianruiappTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D0CDC8F15AD9B216F8E64F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				039F4711DECCD645CCBDB3CA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A136F24BA18C911C2E62546 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tianruiapp/Pods-Tianruiapp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tianruiapp/Pods-Tianruiapp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tianruiapp/Pods-Tianruiapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA2D754C37D3A0A7B6E7D927 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TianruiappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC1D81440959E6F9BDB6D5C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tianruiapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F17C8D24D0F36E17E880875 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CBB8432566387A6DCAC276F /* AppColor.swift in Sources */,
+				E90C5EC42E3F1FF32ED07BB4 /* AppRadius.swift in Sources */,
+				DF7DAF49EC34EC030FF904BA /* AppShadow.swift in Sources */,
+				FEA236B1B5F39751BDF63C17 /* AppSpacing.swift in Sources */,
+				3F9A660D4AD13D199087D933 /* AppTypography.swift in Sources */,
+				E14BAD3A9CA43165EEB24D48 /* AuthAPIClient.swift in Sources */,
+				D342738F173E80598DF096ED /* BleModels.swift in Sources */,
+				2B0F5B6294D822D94A91C8A6 /* BlePacketCodec.swift in Sources */,
+				9DA2CF2719AA839A17E8C368 /* BleRepository.swift in Sources */,
+				D333E4DB0C966AB7F2D8D8F8 /* BleRepositoryImpl.swift in Sources */,
+				1B60B55AC21DEA8F15EA291F /* F1Components.swift in Sources */,
+				BAE568C9D886D3F9BF8D62A1 /* F1HomeScreen.swift in Sources */,
+				D8307DDDEFA384FC29A6211E /* F1MockData.swift in Sources */,
+				8F2E7A9A1951523E42D890F7 /* F1ViewModel.swift in Sources */,
+				5547E47B06CA235182C70577 /* IOSBleManager.swift in Sources */,
+				F69B9F750E0345BD3BBB25DA /* LoginComponents.swift in Sources */,
+				800F33F52E025825E44E3E75 /* LoginScreen.swift in Sources */,
+				872905F4D6E3088FBFA28940 /* LoginViewModel.swift in Sources */,
+				E7B475E130E9EEFC894B8D9A /* RequiredAssets.swift in Sources */,
+				20F09FEBF69B1E2167291531 /* RootScreen.swift in Sources */,
+				961A30DC5C2CB2AE3597B334 /* TianruiappApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		905B3C6DE1F43CBBFC7F0951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83FE8182AB474907E89FCCAC /* AppBootstrapTests.swift in Sources */,
+				7CF11914B7991DE2C2377009 /* BlePacketCodecTests.swift in Sources */,
+				507AEF680673DD3DB36FF16E /* BleRepositoryTests.swift in Sources */,
+				BE124B6039B27F3A11083241 /* F1LayoutTests.swift in Sources */,
+				3137B5DB0F0CBC261B71E868 /* LoginLayoutTests.swift in Sources */,
+				26AFF763C70A33AD9D851CEE /* OtaFlowAlignmentTests.swift in Sources */,
+				B6ED3A42EF348B1C6842FC81 /* RequiredAssetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71442BD26FF780351104372C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D350DD90E3432E2274D4D445 /* Tianruiapp */;
+			targetProxy = D1D04E3099A5EC936C503D1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0ED73E6E2E5CDFF29F09B96C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8Q92DEV7VD;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2B3B02DAD06DEF11970F9A99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1D833315A2C253C1727F691 /* Pods-Tianruiapp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2GLV5B39MG;
+				INFOPLIST_FILE = Tianruiapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xiaochao.com;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6A5D6B7E4083AA04E6B0E452 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE6A73D89BF545BB76B7E774 /* Pods-TianruiappTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tianruiapp.app/Tianruiapp";
+			};
+			name = Debug;
+		};
+		9163E29C21FF6D7652B708D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F9E0333115C6BF189D7050D /* Pods-Tianruiapp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2GLV5B39MG;
+				INFOPLIST_FILE = Tianruiapp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = xiaochao.com;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B1BC6CBE6F40FD1EBBBC5893 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0683B765938050330E372CDC /* Pods-TianruiappTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tianruiapp.app/Tianruiapp";
+			};
+			name = Release;
+		};
+		E85BE5523F32B2C67FB29DFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8Q92DEV7VD;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		833CD3553B69E9F37AF43659 /* Build configuration list for PBXNativeTarget "TianruiappTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A5D6B7E4083AA04E6B0E452 /* Debug */,
+				B1BC6CBE6F40FD1EBBBC5893 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B9079CD19CC947660116B733 /* Build configuration list for PBXNativeTarget "Tianruiapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B3B02DAD06DEF11970F9A99 /* Debug */,
+				9163E29C21FF6D7652B708D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C96CE99D9638BD87D62BBC23 /* Build configuration list for PBXProject "Tianruiapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85BE5523F32B2C67FB29DFF /* Debug */,
+				0ED73E6E2E5CDFF29F09B96C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE0AD3A280411407A2FE8E27 /* Project object */;
+}

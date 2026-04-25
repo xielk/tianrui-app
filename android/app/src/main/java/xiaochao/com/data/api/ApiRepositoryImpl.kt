@@ -6,6 +6,7 @@ import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.contentOrNull
 import kotlinx.serialization.json.intOrNull
 import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
@@ -33,6 +34,13 @@ class ApiRepositoryImpl(
     private val apiService: AppApiService = RetrofitClient.appApiService
 ) : ApiRepository {
     private val json = Json { ignoreUnknownKeys = true }
+
+    companion object {
+        fun buildRemoveSharedUserBody(deviceKey: String, memberId: String): RemoveSharedUserBody {
+            val memberElement: JsonElement = memberId.toIntOrNull()?.let { JsonPrimitive(it) } ?: JsonPrimitive(memberId)
+            return RemoveSharedUserBody(deviceKey = deviceKey, memberId = memberElement, shareUuid = null)
+        }
+    }
 
     private fun apiErrorMessage(e: Exception, fallback: String): String {
         if (e is HttpException) {
@@ -411,7 +419,7 @@ class ApiRepositoryImpl(
     override suspend fun removeSharedUser(deviceKey: String, memberId: String): AppResult<Unit> {
         return try {
             val resp = apiService.removeSharedUser(
-                RemoveSharedUserBody(deviceKey = deviceKey, memberId = memberId)
+                buildRemoveSharedUserBody(deviceKey = deviceKey, memberId = memberId)
             )
             if (resp.code == 0) AppResult.Success(Unit) else AppResult.Error("API_ERROR", resp.message)
         } catch (e: Exception) {

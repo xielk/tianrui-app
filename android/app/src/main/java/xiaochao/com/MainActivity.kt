@@ -3,6 +3,10 @@ package xiaochao.com
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.lifecycleScope
 import com.amap.api.maps2d.MapsInitializer
 import kotlinx.coroutines.Dispatchers
@@ -13,6 +17,7 @@ import xiaochao.com.data.auth.NumberAuthManager
 import xiaochao.com.data.push.TpnsManager
 import xiaochao.com.data.session.AppSessionStore
 import xiaochao.com.data.update.AppUpdateManager
+import xiaochao.com.feature.splash.LogoSplashScreen
 import xiaochao.com.ui.theme.XiaochaoTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +37,12 @@ class MainActivity : ComponentActivity() {
         AppUpdateManager.init(applicationContext)
         setContent {
             XiaochaoTheme {
-                AppNavGraph()
+                var showSplash by rememberSaveable { mutableStateOf(true) }
+                if (showSplash) {
+                    LogoSplashScreen(onFinished = { showSplash = false })
+                } else {
+                    AppNavGraph()
+                }
             }
         }
     }

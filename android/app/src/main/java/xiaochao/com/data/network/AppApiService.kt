@@ -2,6 +2,7 @@ package xiaochao.com.data.network
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import retrofit2.http.*
 
@@ -58,7 +59,7 @@ data class ShareDeviceBody(
 @Serializable
 data class RemoveSharedUserBody(
     @SerialName("device_key") val deviceKey: String,
-    @SerialName("member_id") val memberId: String? = null,
+    @SerialName("member_id") val memberId: JsonElement? = null,
     @SerialName("share_uuid") val shareUuid: String? = null,
 )
 

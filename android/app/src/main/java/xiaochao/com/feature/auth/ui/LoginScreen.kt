@@ -79,7 +79,7 @@ fun LoginScreen(
             }
             
             Text(
-                text = "宗申智行",
+                text = "天瑞智行",
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.Black,

@@ -4,6 +4,8 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/ic_launcher" />
+            android:width="@dimen/splash_logo_size"
+            android:height="@dimen/splash_logo_size"
+            android:src="@drawable/app_logo" />
     </item>
 </layer-list>
