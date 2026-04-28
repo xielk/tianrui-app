@@ -697,10 +697,14 @@ class F2ViewModel(
             }
 
             var trackAddress = "暂无轨迹"
+            var trackLatitude = 0.0
+            var trackLongitude = 0.0
             when (val trackRes = apiRepository.fetchDeviceTrackPoints(deviceKey, 20)) {
                 is AppResult.Success -> {
-                    val endPoint = trackRes.data.lastOrNull()
+                    val endPoint = resolveTrackPreviewPoint(trackRes.data)
                     if (endPoint != null) {
+                        trackLatitude = endPoint.latitude
+                        trackLongitude = endPoint.longitude
                         trackAddress = when (val addrRes = apiRepository.fetchLocationAddress(endPoint.latitude, endPoint.longitude)) {
                             is AppResult.Success -> addrRes.data
                             is AppResult.Error -> "历史轨迹"
@@ -716,10 +720,16 @@ class F2ViewModel(
                 it.copy(
                     currentLocationAddress = currentAddress,
                     trackLocationAddress = trackAddress,
+                    trackLatitude = trackLatitude,
+                    trackLongitude = trackLongitude,
                 )
             }
         }
     }
+}
+
+internal fun resolveTrackPreviewPoint(points: List<xiaochao.com.data.api.TrackPoint>): xiaochao.com.data.api.TrackPoint? {
+    return points.lastOrNull { it.latitude != 0.0 && it.longitude != 0.0 }
 }
 
 internal fun resolveMuteTarget(current: Boolean): Boolean = !current

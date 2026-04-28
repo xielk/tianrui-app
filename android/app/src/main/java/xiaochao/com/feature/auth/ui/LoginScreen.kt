@@ -1,18 +1,13 @@
 package xiaochao.com.feature.auth.ui
 
 import android.widget.Toast
-import androidx.activity.ComponentActivity
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -26,7 +21,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import xiaochao.com.R
-import xiaochao.com.data.auth.NumberAuthManager
 import xiaochao.com.feature.auth.presentation.AuthIntent
 import xiaochao.com.feature.auth.presentation.AuthViewModel
 
@@ -37,7 +31,6 @@ fun LoginScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val context = LocalContext.current
-    var mode by rememberSaveable { mutableStateOf<String?>(null) }
 
     LaunchedEffect(uiState.errorString) {
         uiState.errorString?.let {
@@ -86,109 +79,54 @@ fun LoginScreen(
                 modifier = Modifier.padding(top = 16.dp, bottom = 40.dp)
             )
 
-            if (mode == null) {
-                Button(
-                    onClick = {
-                        if (!uiState.isAgree) {
-                            Toast.makeText(context, "请先阅读并同意协议", Toast.LENGTH_SHORT).show()
-                            return@Button
-                        }
-                        val activity = context as? ComponentActivity
-                        if (activity == null) {
-                            Toast.makeText(context, "当前环境不支持号码认证", Toast.LENGTH_SHORT).show()
-                            return@Button
-                        }
-                        NumberAuthManager.startOneKeyLogin(
-                            activity = activity,
-                            onToken = { token ->
-                                viewModel.processIntent(AuthIntent.OneKeyTokenReceived(token))
-                            },
-                            onError = { msg ->
-                                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
-                            }
-                        )
-                    },
-                    enabled = !uiState.isLoading,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(48.dp),
-                    shape = RoundedCornerShape(4.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF007AFF))
-                ) {
-                    Text("本机号码一键登录", fontSize = 16.sp, color = Color.White)
-                }
+            AuthTextField(
+                value = uiState.phone,
+                onValueChange = { viewModel.processIntent(AuthIntent.PhoneChanged(it)) },
+                placeholder = "请输入手机号",
+                maxLength = 11
+            )
 
-                Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
+            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+                AuthTextField(
+                    value = uiState.code,
+                    onValueChange = { viewModel.processIntent(AuthIntent.CodeChanged(it)) },
+                    placeholder = "请输入验证码",
+                    maxLength = 6,
+                    modifier = Modifier.weight(1f)
+                )
+                Spacer(modifier = Modifier.width(12.dp))
                 OutlinedButton(
                     onClick = {
                         if (!uiState.isAgree) {
                             Toast.makeText(context, "请先阅读并同意协议", Toast.LENGTH_SHORT).show()
                             return@OutlinedButton
                         }
-                        mode = "sms"
+                        viewModel.processIntent(AuthIntent.SendCodeClicked)
                     },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(48.dp),
-                    shape = RoundedCornerShape(4.dp),
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFF007AFF)),
-                    border = androidx.compose.foundation.BorderStroke(1.dp, Color(0xFF007AFF))
+                    enabled = uiState.countdown == 0,
+                    modifier = Modifier.height(56.dp).width(120.dp),
+                    shape = RoundedCornerShape(2.dp),
+                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.Black),
+                    border = androidx.compose.foundation.BorderStroke(1.dp, Color(0xFFE0E0E0))
                 ) {
-                    Text("短信验证码登录", fontSize = 15.sp)
+                    Text(if (uiState.countdown > 0) "${uiState.countdown}秒" else "发送验证码", fontSize = 13.sp)
                 }
-            } else {
-                AuthTextField(
-                    value = uiState.phone,
-                    onValueChange = { viewModel.processIntent(AuthIntent.PhoneChanged(it)) },
-                    placeholder = "请输入手机号",
-                    maxLength = 11
-                )
+            }
 
-                Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
-                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
-                    AuthTextField(
-                        value = uiState.code,
-                        onValueChange = { viewModel.processIntent(AuthIntent.CodeChanged(it)) },
-                        placeholder = "请输入验证码",
-                        maxLength = 6,
-                        modifier = Modifier.weight(1f)
-                    )
-                    Spacer(modifier = Modifier.width(12.dp))
-                    OutlinedButton(
-                        onClick = { viewModel.processIntent(AuthIntent.SendCodeClicked) },
-                        enabled = uiState.countdown == 0,
-                        modifier = Modifier.height(56.dp).width(120.dp),
-                        shape = RoundedCornerShape(2.dp),
-                        colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.Black),
-                        border = androidx.compose.foundation.BorderStroke(1.dp, Color(0xFFE0E0E0))
-                    ) {
-                        Text(if (uiState.countdown > 0) "${uiState.countdown}秒" else "发送验证码", fontSize = 13.sp)
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(20.dp))
-
-                Button(
-                    onClick = { viewModel.processIntent(AuthIntent.SubmitClicked) },
-                    enabled = !uiState.isLoading,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(48.dp),
-                    shape = RoundedCornerShape(4.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF007AFF))
-                ) {
-                    Text(if (uiState.isLoading) "登录中..." else "登录", fontSize = 16.sp, color = Color.White)
-                }
-
-                Spacer(modifier = Modifier.height(10.dp))
-                Text(
-                    text = "返回登录方式选择",
-                    color = Color(0xFF007AFF),
-                    fontSize = 14.sp,
-                    modifier = Modifier.clickable { mode = null }
-                )
+            Button(
+                onClick = { viewModel.processIntent(AuthIntent.SubmitClicked) },
+                enabled = !uiState.isLoading,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(48.dp),
+                shape = RoundedCornerShape(4.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF007AFF))
+            ) {
+                Text(if (uiState.isLoading) "登录中..." else "登录", fontSize = 16.sp, color = Color.White)
             }
 
             Spacer(modifier = Modifier.height(14.dp))

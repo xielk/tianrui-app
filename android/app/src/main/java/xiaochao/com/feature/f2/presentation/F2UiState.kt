@@ -34,6 +34,8 @@ data class F2UiState(
     val gpsLocked: Boolean = false,
     val currentLocationAddress: String = "获取地址中",
     val trackLocationAddress: String = "获取地址中",
+    val trackLatitude: Double = 0.0,
+    val trackLongitude: Double = 0.0,
     val timeText: String = "00:00",
     val mileageText: String = "0/km",
     val durationText: String = "--",

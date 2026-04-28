@@ -1,0 +1,53 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:2:1-24:12
+	package
+		INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:4:5-22:19
+INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:4:5-22:19
+	android:extractNativeLibs
+		INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml
+	android:supportsRtl
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:7:9-35
+	android:label
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:6:9-39
+	android:allowBackup
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:5:9-35
+service#com.example.automation.AutomationService
+ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:9:9-21:19
+	android:exported
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:12:13-36
+	android:permission
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:11:13-79
+	android:name
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:10:13-68
+intent-filter#action:name:android.accessibilityservice.AccessibilityService
+ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:14:13-16:29
+action#android.accessibilityservice.AccessibilityService
+ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:15:17-92
+	android:name
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:15:25-89
+meta-data#android.accessibilityservice
+ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:18:13-20:72
+	android:resource
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:19:17-60
+uses-sdk
+INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml
+INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml

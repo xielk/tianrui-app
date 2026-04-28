@@ -36,6 +36,10 @@ fun F2MapAndMetrics(
     durationText: String,
     topSpeedText: String,
     avgSpeedText: String,
+    latitude: Double,
+    longitude: Double,
+    trackLatitude: Double,
+    trackLongitude: Double,
     showLocationCards: Boolean,
     onCurrentLocationClick: () -> Unit,
     onHistoryTrackClick: () -> Unit,
@@ -44,8 +48,8 @@ fun F2MapAndMetrics(
         BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
             val cardWidth = (maxWidth - 12.dp) / 2
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                MapCard("当前位置", currentLocationAddress, R.drawable.f2_map_current, gpsLocked, onCurrentLocationClick, modifier = Modifier.width(cardWidth))
-                MapCard("历史轨迹", trackLocationAddress, R.drawable.f2_map_history, gpsLocked, onHistoryTrackClick, modifier = Modifier.width(cardWidth))
+                MapCard("当前位置", currentLocationAddress, latitude, longitude, gpsLocked, onCurrentLocationClick, modifier = Modifier.width(cardWidth))
+                HistoryTrackCard("历史轨迹", trackLocationAddress, trackLatitude, trackLongitude, gpsLocked, onHistoryTrackClick, modifier = Modifier.width(cardWidth))
             }
         }
     }
@@ -78,7 +82,15 @@ fun F2MapAndMetrics(
 }
 
 @Composable
-private fun MapCard(label: String, address: String, imageRes: Int, gpsLocked: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier) {
+private fun MapCard(
+    label: String,
+    address: String,
+    latitude: Double,
+    longitude: Double,
+    gpsLocked: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     Card(
         modifier = modifier
             .alpha(if (gpsLocked) 0.5f else 1f)
@@ -88,14 +100,58 @@ private fun MapCard(label: String, address: String, imageRes: Int, gpsLocked: Bo
         colors = CardDefaults.cardColors(containerColor = Color.White)
     ) {
         Column(modifier = Modifier.padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-            Image(
-                painter = painterResource(id = imageRes),
-                contentDescription = label,
+            TianDiTuCurrentLocationWebMap(
+                latitude = latitude,
+                longitude = longitude,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(84.dp)
                     .background(Color(0xFFDDE5F3), RoundedCornerShape(16.dp))
             )
+            Text(text = address, color = Color(0xFF6E7F97), fontSize = 10.sp)
+        }
+    }
+}
+
+@Composable
+private fun HistoryTrackCard(
+    label: String,
+    address: String,
+    latitude: Double,
+    longitude: Double,
+    gpsLocked: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val hasTrackPreview = latitude != 0.0 && longitude != 0.0
+    Card(
+        modifier = modifier
+            .alpha(if (gpsLocked) 0.5f else 1f)
+            .clickable(enabled = !gpsLocked, onClick = onClick)
+            .height(146.dp),
+        shape = RoundedCornerShape(20.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White)
+    ) {
+        Column(modifier = Modifier.padding(8.dp), verticalArrangement = Arrangement.spacedBy(6.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            if (hasTrackPreview) {
+                TianDiTuCurrentLocationWebMap(
+                    latitude = latitude,
+                    longitude = longitude,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(84.dp)
+                        .background(Color(0xFFDDE5F3), RoundedCornerShape(16.dp))
+                )
+            } else {
+                Image(
+                    painter = painterResource(id = R.drawable.f2_map_history),
+                    contentDescription = label,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(84.dp)
+                        .background(Color(0xFFDDE5F3), RoundedCornerShape(16.dp))
+                )
+            }
             Text(text = address, color = Color(0xFF6E7F97), fontSize = 10.sp)
         }
     }

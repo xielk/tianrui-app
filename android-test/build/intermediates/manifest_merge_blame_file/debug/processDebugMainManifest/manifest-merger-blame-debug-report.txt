@@ -1,0 +1,45 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.automation"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <application
+11-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:4:5-22:19
+12        android:allowBackup="true"
+12-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:5:9-35
+13        android:debuggable="true"
+14        android:extractNativeLibs="false"
+15        android:label="AutomationDemo"
+15-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:6:9-39
+16        android:supportsRtl="true" >
+16-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:7:9-35
+17        <service
+17-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:9:9-21:19
+18            android:name="com.example.automation.AutomationService"
+18-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:10:13-68
+19            android:exported="true"
+19-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:12:13-36
+20            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+20-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:11:13-79
+21            <intent-filter>
+21-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:14:13-16:29
+22                <action android:name="android.accessibilityservice.AccessibilityService" />
+22-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:15:17-92
+22-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:15:25-89
+23            </intent-filter>
+24
+25            <meta-data
+25-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:18:13-20:72
+26                android:name="android.accessibilityservice"
+26-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:19:17-60
+27                android:resource="@xml/accessibility_service_config" />
+27-->/Users/aaron/webdata/html/app/android-test/src/main/AndroidManifest.xml:20:17-69
+28        </service>
+29    </application>
+30
+31</manifest>

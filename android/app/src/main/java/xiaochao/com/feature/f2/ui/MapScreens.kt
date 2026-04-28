@@ -1,23 +1,18 @@
 package xiaochao.com.feature.f2.ui
 
-import android.os.Bundle
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.ui.layout.ContentScale
-import xiaochao.com.R
-import androidx.compose.foundation.clickable
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -27,55 +22,29 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleEventObserver
-import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.amap.api.maps2d.MapView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import xiaochao.com.core.map.MapManagerRegistry
 import xiaochao.com.core.result.AppResult
 import xiaochao.com.data.api.ApiRepositoryImpl
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Icon
-import androidx.compose.foundation.clickable
+import xiaochao.com.feature.f2.ui.components.TianDiTuCurrentLocationWebMap
+import xiaochao.com.feature.f2.ui.components.TianDiTuTrackWebMap
 
 @Composable
 fun F2CurrentLocationMapScreen(deviceKey: String, onBack: () -> Unit) {
     val context = LocalContext.current
-    val lifecycleOwner = LocalLifecycleOwner.current
-    val mapManager = remember { MapManagerRegistry.current() }
     val repo = remember { ApiRepositoryImpl() }
-    val mapView = remember {
-        MapView(context).apply { onCreate(Bundle()) }
-    }
 
     var loading by remember { mutableStateOf(true) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
     var location by remember { mutableStateOf<Pair<Double, Double>?>(null) }
 
-    DisposableEffect(lifecycleOwner, mapView) {
-        val observer = LifecycleEventObserver { _, event ->
-            when (event) {
-                Lifecycle.Event.ON_RESUME -> mapView.onResume()
-                Lifecycle.Event.ON_PAUSE -> mapView.onPause()
-                Lifecycle.Event.ON_DESTROY -> mapView.onDestroy()
-                else -> Unit
-            }
-        }
-        lifecycleOwner.lifecycle.addObserver(observer)
-        onDispose {
-            lifecycleOwner.lifecycle.removeObserver(observer)
-            mapView.onDestroy()
-        }
-    }
-
     LaunchedEffect(deviceKey) {
         loading = true
         errorMessage = null
-        when (val result = withContext(Dispatchers.IO) { repo.fetchVehicleStatus(deviceKey) }) {
+        when (val result = withContext(Dispatchers.IO) { repo.fetchDeviceInfo(deviceKey) }) {
             is AppResult.Success -> {
                 val lat = result.data.latitude
                 val lng = result.data.longitude
@@ -100,9 +69,12 @@ fun F2CurrentLocationMapScreen(deviceKey: String, onBack: () -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
         RowTopBar(title = "当前位置", onBack = onBack)
         Box(modifier = Modifier.fillMaxSize()) {
-            AndroidView(factory = { mapView }, modifier = Modifier.fillMaxSize(), update = { view ->
-                location?.let { (lat, lng) -> mapManager.renderCurrentLocation(view.map, lat, lng) }
-            })
+            val current = location
+            TianDiTuCurrentLocationWebMap(
+                latitude = current?.first ?: 0.0,
+                longitude = current?.second ?: 0.0,
+                modifier = Modifier.fillMaxSize(),
+            )
             if (loading) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             }
@@ -113,32 +85,11 @@ fun F2CurrentLocationMapScreen(deviceKey: String, onBack: () -> Unit) {
 @Composable
 fun F2TrackMapScreen(deviceKey: String, onBack: () -> Unit) {
     val context = LocalContext.current
-    val lifecycleOwner = LocalLifecycleOwner.current
-    val mapManager = remember { MapManagerRegistry.current() }
     val repo = remember { ApiRepositoryImpl() }
-    val mapView = remember {
-        MapView(context).apply { onCreate(Bundle()) }
-    }
 
     var loading by remember { mutableStateOf(true) }
     var points by remember { mutableStateOf<List<Pair<Double, Double>>>(emptyList()) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
-
-    DisposableEffect(lifecycleOwner, mapView) {
-        val observer = LifecycleEventObserver { _, event ->
-            when (event) {
-                Lifecycle.Event.ON_RESUME -> mapView.onResume()
-                Lifecycle.Event.ON_PAUSE -> mapView.onPause()
-                Lifecycle.Event.ON_DESTROY -> mapView.onDestroy()
-                else -> Unit
-            }
-        }
-        lifecycleOwner.lifecycle.addObserver(observer)
-        onDispose {
-            lifecycleOwner.lifecycle.removeObserver(observer)
-            mapView.onDestroy()
-        }
-    }
 
     LaunchedEffect(deviceKey) {
         loading = true
@@ -162,9 +113,7 @@ fun F2TrackMapScreen(deviceKey: String, onBack: () -> Unit) {
     Column(modifier = Modifier.fillMaxSize()) {
         RowTopBar(title = "历史轨迹", onBack = onBack)
         Box(modifier = Modifier.fillMaxSize()) {
-            AndroidView(factory = { mapView }, modifier = Modifier.fillMaxSize(), update = { view ->
-                mapManager.renderTrack(view.map, points)
-            })
+            TianDiTuTrackWebMap(points = points, modifier = Modifier.fillMaxSize())
             if (loading) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             }

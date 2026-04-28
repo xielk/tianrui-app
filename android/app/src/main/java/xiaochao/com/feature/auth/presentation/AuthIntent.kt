@@ -6,7 +6,6 @@ sealed class AuthIntent {
     object ToggleAgreement : AuthIntent()
     object SendCodeClicked : AuthIntent()
     object SubmitClicked : AuthIntent()
-    data class OneKeyTokenReceived(val token: String) : AuthIntent()
     data class ShowAgreement(val type: AgreementType) : AuthIntent()
     object CloseAgreement : AuthIntent()
     object ErrorConsumed : AuthIntent()

@@ -49,6 +49,7 @@ import xiaochao.com.data.model.DeviceType
 import xiaochao.com.feature.f2.presentation.F2Intent
 import xiaochao.com.feature.f2.presentation.F2ViewModel
 import xiaochao.com.feature.f2.presentation.DeviceOption
+import xiaochao.com.feature.f2.ui.components.TianDiTuCurrentLocationWebMap
 
 @Composable
 fun M1BControlScreen(
@@ -124,14 +125,18 @@ fun M1BControlScreen(
             ) {
                 Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Box {
-                        Image(
-                            painter = painterResource(id = R.drawable.f2_map_current),
-                            contentDescription = null,
+                        Box(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(220.dp)
                                 .clickable { if (uiState.deviceKey.isNotBlank()) onNavigateCurrentLocation(uiState.deviceKey) }
-                        )
+                        ) {
+                            TianDiTuCurrentLocationWebMap(
+                                latitude = uiState.latitude,
+                                longitude = uiState.longitude,
+                                modifier = Modifier.fillMaxSize(),
+                            )
+                        }
                         Box(
                             modifier = Modifier
                                 .align(Alignment.TopEnd)

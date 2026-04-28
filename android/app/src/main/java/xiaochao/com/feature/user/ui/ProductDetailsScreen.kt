@@ -98,15 +98,6 @@ fun ProductDetailsScreen(onBack: () -> Unit) {
                     Stat(info?.deviceModel?.batteryCapacity, "Ah", "电池容量")
                 }
             }
-            Image(
-                painter = painterResource(id = R.drawable.f2_bike),
-                contentDescription = null,
-                modifier = Modifier
-                    .align(Alignment.CenterEnd)
-                    .size(220.dp)
-                    .padding(end = 8.dp, top = 14.dp)
-                    .background(Color.Transparent)
-            )
         }
 
         Card(

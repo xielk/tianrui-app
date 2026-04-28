@@ -10,14 +10,12 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import xiaochao.com.domain.auth.LoginUseCase
-import xiaochao.com.domain.auth.OneKeyLoginUseCase
 import xiaochao.com.domain.auth.SendCodeUseCase
 import xiaochao.com.data.session.AppSessionStore
 
 class AuthViewModel(
     private val loginUseCase: LoginUseCase = LoginUseCase(),
     private val sendCodeUseCase: SendCodeUseCase = SendCodeUseCase(),
-    private val oneKeyLoginUseCase: OneKeyLoginUseCase = OneKeyLoginUseCase(),
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(AuthUiState())
@@ -46,7 +44,6 @@ class AuthViewModel(
             AuthIntent.CloseAgreement -> _uiState.update { it.copy(showAgreementLayer = false) }
             AuthIntent.SendCodeClicked -> sendCode()
             AuthIntent.SubmitClicked -> login()
-            is AuthIntent.OneKeyTokenReceived -> loginWithOneKey(intent.token)
             AuthIntent.ErrorConsumed -> _uiState.update { it.copy(errorString = null) }
         }
     }
@@ -110,29 +107,4 @@ class AuthViewModel(
         }
     }
 
-    private fun loginWithOneKey(token: String) {
-        if (_uiState.value.isLoading) return
-        if (!_uiState.value.isAgree) {
-            _uiState.update { it.copy(errorString = "请先阅读并同意协议") }
-            return
-        }
-        viewModelScope.launch {
-            _uiState.update { it.copy(isLoading = true) }
-            val result = oneKeyLoginUseCase(token)
-            if (result.isSuccess) {
-                val loginData = result.getOrNull()
-                if (loginData != null) {
-                    xiaochao.com.core.AppConfig.deviceUuid = loginData.uuid
-                }
-                _uiState.update { it.copy(isLoading = false, isLoggedIn = true) }
-            } else {
-                _uiState.update {
-                    it.copy(
-                        isLoading = false,
-                        errorString = result.exceptionOrNull()?.message ?: "号码认证登录失败"
-                    )
-                }
-            }
-        }
-    }
 }

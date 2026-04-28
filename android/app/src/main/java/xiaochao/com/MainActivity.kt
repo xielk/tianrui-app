@@ -13,7 +13,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import xiaochao.com.app.navigation.AppNavGraph
-import xiaochao.com.data.auth.NumberAuthManager
 import xiaochao.com.data.push.TpnsManager
 import xiaochao.com.data.session.AppSessionStore
 import xiaochao.com.data.update.AppUpdateManager
@@ -30,7 +29,6 @@ class MainActivity : ComponentActivity() {
         // MapsInitializer.updatePrivacyShow(this, true, true)
         // MapsInitializer.updatePrivacyAgree(this, true)
         AppSessionStore.init(applicationContext)
-        NumberAuthManager.prepare(applicationContext)
         lifecycleScope.launch(Dispatchers.IO) {
             TpnsManager.init(applicationContext)
         }

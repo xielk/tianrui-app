@@ -80,7 +80,7 @@ fun UserCenterScreen(
             MenuItem("选择电池类型", R.drawable.user_about),
             MenuItem("产品详情", R.drawable.user_about),
             MenuItem("检查APP更新", R.drawable.user_about),
-            MenuItem("检查OTA更新", R.drawable.user_about),
+//            MenuItem("检查OTA更新", R.drawable.user_about),
         )
     }
 

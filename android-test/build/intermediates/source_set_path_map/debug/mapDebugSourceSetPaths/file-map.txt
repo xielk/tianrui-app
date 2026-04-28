@@ -1,0 +1,8 @@
+com.example.automation-pngs-0 /Users/aaron/webdata/html/app/android-test/build/generated/res/pngs/debug
+com.example.automation-resValues-1 /Users/aaron/webdata/html/app/android-test/build/generated/res/resValues/debug
+com.example.automation-updated_navigation_xml-2 /Users/aaron/webdata/html/app/android-test/build/generated/updated_navigation_xml/debug
+com.example.automation-packageDebugResources-3 /Users/aaron/webdata/html/app/android-test/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.automation-packageDebugResources-4 /Users/aaron/webdata/html/app/android-test/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.automation-debug-5 /Users/aaron/webdata/html/app/android-test/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.automation-debug-6 /Users/aaron/webdata/html/app/android-test/src/debug/res
+com.example.automation-main-7 /Users/aaron/webdata/html/app/android-test/src/main/res

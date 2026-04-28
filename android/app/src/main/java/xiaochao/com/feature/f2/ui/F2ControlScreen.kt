@@ -274,32 +274,34 @@ fun F2ControlScreen(
                         .align(Alignment.TopStart)
                         .offset(x = 2.dp, y = 26.dp)
                 )
-                Card(
-                    shape = RoundedCornerShape(18.dp),
-                    modifier = Modifier
-                        .align(Alignment.TopEnd)
-                        .offset(y = 22.dp)
-                        .alpha(0.95f)
-                        .clickable { onNavigateMoveDevice() }
-                ) {
-                    Column(
+                if (!isF1Layout) {
+                    Card(
+                        shape = RoundedCornerShape(18.dp),
                         modifier = Modifier
-                            .background(Brush.horizontalGradient(listOf(Color(0xFF2C315D), Color(0xFF1A1E3A))))
-                            .padding(horizontal = 14.dp, vertical = 7.dp),
-                        verticalArrangement = Arrangement.spacedBy(2.dp)
+                            .align(Alignment.TopEnd)
+                            .offset(y = 22.dp)
+                            .alpha(0.95f)
+                            .clickable { onNavigateMoveDevice() }
                     ) {
-                        Text(
-                            text = "挪车",
-                            color = Color(0xFF00E94F),
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 12.sp,
-                        )
-                        Text(
-                            text = "电压：${uiState.voltageText}",
-                            color = Color(0xFFD7DEEC),
-                            fontWeight = FontWeight.Medium,
-                            fontSize = 11.sp,
-                        )
+                        Column(
+                            modifier = Modifier
+                                .background(Brush.horizontalGradient(listOf(Color(0xFF2C315D), Color(0xFF1A1E3A))))
+                                .padding(horizontal = 14.dp, vertical = 7.dp),
+                            verticalArrangement = Arrangement.spacedBy(2.dp)
+                        ) {
+                            Text(
+                                text = "挪车",
+                                color = Color(0xFF00E94F),
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 12.sp,
+                            )
+                            Text(
+                                text = "电压：${uiState.voltageText}",
+                                color = Color(0xFFD7DEEC),
+                                fontWeight = FontWeight.Medium,
+                                fontSize = 11.sp,
+                            )
+                        }
                     }
                 }
                 Image(
@@ -346,6 +348,10 @@ fun F2ControlScreen(
                 durationText = uiState.durationText,
                 topSpeedText = uiState.topSpeedText,
                 avgSpeedText = uiState.avgSpeedText,
+                latitude = uiState.latitude,
+                longitude = uiState.longitude,
+                trackLatitude = uiState.trackLatitude,
+                trackLongitude = uiState.trackLongitude,
                 showLocationCards = !isF1Layout,
                 onCurrentLocationClick = {
                     if (uiState.gpsLocked) {

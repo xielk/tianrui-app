@@ -18,14 +18,12 @@ android {
         targetSdk = 36
         versionCode = 130
         versionName = "1.3.0"
-        val numberAuthSecret = (project.findProperty("NUMBER_AUTH_SECRET") as? String).orEmpty()
         val tpnsAccessId = (project.findProperty("TPNS_ACCESS_ID") as? String).orEmpty()
         val tpnsAccessKey = (project.findProperty("TPNS_ACCESS_KEY") as? String).orEmpty()
         val tpnsSecretKey = (project.findProperty("TPNS_SECRET_KEY") as? String).orEmpty()
         val tpnsServerSuffix = (project.findProperty("TPNS_SERVER_SUFFIX") as? String)
             ?.takeIf { it.isNotBlank() }
             ?: "tpns.sh.tencent.com"
-        buildConfigField("String", "NUMBER_AUTH_SECRET", "\"$numberAuthSecret\"")
         buildConfigField("String", "TPNS_ACCESS_ID", "\"$tpnsAccessId\"")
         buildConfigField("String", "TPNS_ACCESS_KEY", "\"$tpnsAccessKey\"")
         buildConfigField("String", "TPNS_SECRET_KEY", "\"$tpnsSecretKey\"")

@@ -1,0 +1,4 @@
+com.example.automation.test-androidTest-0 /Users/aaron/webdata/html/app/android-test/build/generated/res/resValues/androidTest/debug
+com.example.automation.test-mergeDebugAndroidTestResources-1 /Users/aaron/webdata/html/app/android-test/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.example.automation.test-mergeDebugAndroidTestResources-2 /Users/aaron/webdata/html/app/android-test/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.example.automation.test-debugAndroidTest-3 /Users/aaron/webdata/html/app/android-test/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
